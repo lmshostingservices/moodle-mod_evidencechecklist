@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<libraries>
+  <library>
+    <location>fonts/plusjakartasans.woff2</location>
+    <name>Plus Jakarta Sans (variable, latin)</name>
+    <version>5.3.0 (Fontsource)</version>
+    <license>OFL</license>
+    <licenseversion>1.1</licenseversion>
+    <repository>https://github.com/tokotype/PlusJakartaSans</repository>
+  </library>
+</libraries>
