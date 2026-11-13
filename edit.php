@@ -38,7 +38,6 @@ $record = $DB->get_record('evidencechecklist', ['id' => $cm->instance], '*', MUS
 require_login($course, false, $cm);
 $context = context_module::instance($cm->id);
 require_capability('mod/evidencechecklist:manage', $context);
-\mod_evidencechecklist\local\entitlement::require_access();
 
 $url = new moodle_url('/mod/evidencechecklist/edit.php', ['id' => $cm->id]);
 if (optional_param('downloadprompt', 0, PARAM_BOOL)) {

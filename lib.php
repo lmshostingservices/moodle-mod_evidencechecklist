@@ -57,7 +57,6 @@ function evidencechecklist_supports($feature) {
  */
 function evidencechecklist_add_instance($data, $mform = null) {
     global $DB;
-    \mod_evidencechecklist\local\entitlement::require_access();
     $data->timecreated = time();
     $data->timemodified = $data->timecreated;
     if (!isset($data->statements) || trim((string)$data->statements) === '') {
@@ -84,7 +83,6 @@ function evidencechecklist_add_instance($data, $mform = null) {
  */
 function evidencechecklist_update_instance($data, $mform = null) {
     global $DB;
-    \mod_evidencechecklist\local\entitlement::require_access();
     $data->timemodified = time();
     $data->id = $data->instance;
     $DB->update_record('evidencechecklist', $data);

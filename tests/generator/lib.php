@@ -47,29 +47,6 @@ class mod_evidencechecklist_generator extends testing_module_generator {
             'grade' => 1,
             'completioncompetent' => 0,
         ];
-        // Fixtures use a check-only mock; native tests must not contact or debit a real site.
-        $transport = \mod_evidencechecklist\local\entitlement::$transport;
-        $siteid = get_config('mod_evidencechecklist', 'siteid');
-        $apikey = get_config('mod_evidencechecklist', 'apikey');
-        set_config('siteid', 'evidence-checklist-unit-test', 'mod_evidencechecklist');
-        set_config('apikey', 'fixture-not-a-real-credential', 'mod_evidencechecklist');
-        \mod_evidencechecklist\local\entitlement::$transport = static function (array $payload): array {
-            return [200, '{"unlocked":true}'];
-        };
-        try {
-            return parent::create_instance($record, (array)$options);
-        } finally {
-            \mod_evidencechecklist\local\entitlement::$transport = $transport;
-            if ($siteid === false) {
-                unset_config('siteid', 'mod_evidencechecklist');
-            } else {
-                set_config('siteid', $siteid, 'mod_evidencechecklist');
-            }
-            if ($apikey === false) {
-                unset_config('apikey', 'mod_evidencechecklist');
-            } else {
-                set_config('apikey', $apikey, 'mod_evidencechecklist');
-            }
-        }
+        return parent::create_instance($record, (array)$options);
     }
 }

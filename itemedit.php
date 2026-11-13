@@ -34,7 +34,6 @@ $record = $DB->get_record('evidencechecklist', ['id' => $cm->instance], '*', MUS
 require_login($course, false, $cm);
 $context = context_module::instance($cm->id);
 require_capability('mod/evidencechecklist:manage', $context);
-\mod_evidencechecklist\local\entitlement::require_access();
 $item = $DB->get_record('evidencechecklist_item', ['id' => $itemid, 'checklistid' => $record->id], '*', MUST_EXIST);
 
 $url = new moodle_url('/mod/evidencechecklist/itemedit.php', ['id' => $cm->id, 'itemid' => $itemid]);

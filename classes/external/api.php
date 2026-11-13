@@ -47,9 +47,6 @@ class api extends external_api {
         $context = \context_module::instance($cm->id);
         self::validate_context($context);
         require_capability('mod/evidencechecklist:view', $context);
-        if ($mode !== 'read') {
-            \mod_evidencechecklist\local\entitlement::require_access();
-        }
         $record = $DB->get_record('evidencechecklist', ['id' => $cm->instance], '*', MUST_EXIST);
         $cl = new checklist($record);
         $isself = ($userid == $USER->id);

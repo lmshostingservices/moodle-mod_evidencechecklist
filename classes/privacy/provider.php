@@ -107,6 +107,12 @@ class provider implements
             $p . 'evidencechecklist_maplog'
         );
         $collection->add_subsystem_link('core_files', [], $p . 'core_files');
+        // LMS Labs activation check: site-level licence details only. No personal or learner data is sent.
+        $collection->add_external_location_link('lmslabs', [
+            'siteid' => $p . 'lmslabs:siteid',
+            'apikey' => $p . 'lmslabs:apikey',
+            'pluginid' => $p . 'lmslabs:pluginid',
+        ], $p . 'lmslabs');
         $collection->add_user_preference('mod_evidencechecklist_tips', $p . 'pref_tips');
         $collection->add_user_preference('mod_evidencechecklist_dismissed', $p . 'pref_dismissed');
         $collection->add_external_location_link(

@@ -40,7 +40,6 @@ require_login($course, false, $cm);
 require_sesskey();
 $context = context_module::instance($cm->id);
 require_capability('mod/evidencechecklist:assess', $context);
-\mod_evidencechecklist\local\entitlement::require_access();
 attempt_manager::require_group_access($cm, $context, $userid);
 if (!is_enrolled($context, $userid, 'mod/evidencechecklist:beassessed', true)) {
     throw new moodle_exception('notastudent', 'mod_evidencechecklist');

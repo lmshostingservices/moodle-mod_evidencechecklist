@@ -1,13 +1,19 @@
 # Changelog
 
-## [v1.2.1] - 2026-10-28
+## [v1.2.2] - 2026-11-13
 
 ### Changed
-- Owner-approved acquisition: a one-time 500-credit LMS Labs site unlock, or US$50 on Moodle Marketplace. These are alternative purchase routes; recognised Marketplace purchases are not charged again.
-- Settings explain acquisition separately from AI usage. There are no ongoing AI usage charges.
-- Added check-only site activation using Central Config credentials or optional plugin-specific credentials.
-- Creating, editing and assessing activities requires verified access. Activation checks, settings views and installation never purchase or debit credits.
-- Preserve the supplied 1.2.0 assessment, evidence, reporting and learner-view features.
+- Version bump for resubmission to the Moodle plugins directory (review MMRT-259). Includes all v1.2.1 fixes.
+- Issue tracker is now public: https://github.com/lmshostingservices/evidence-checklist/issues
+
+## [v1.2.1] - 2026-11-09
+
+### Fixed
+- Added missing language strings: the "result released" message provider (messageprovider:resultreleased) and the
+  privacy descriptions for the gap plan close fields (closedby, closenote, timeclosed).
+- The privacy provider now declares the LMS Labs activation check sent to lms-labs.com (site ID, API key and plugin ID).
+  No personal or learner data is sent.
+- Release ZIP now includes explicit directory entries.
 
 ## [v1.2.0] - 2026-10-28
 

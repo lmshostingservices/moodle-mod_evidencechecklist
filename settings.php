@@ -27,27 +27,6 @@ defined('MOODLE_INTERNAL') || die();
 if ($ADMIN->fulltree) {
     $p = 'mod_evidencechecklist';
     $settings->add(new admin_setting_heading("$p/intro", '', get_string('settings_intro', $p)));
-    $settings->add(new admin_setting_heading(
-        "$p/activation",
-        get_string('activationheading', $p),
-        get_string('acquisitiondescription', $p) . html_writer::tag('p', html_writer::link(
-            new moodle_url('/mod/evidencechecklist/activate.php'),
-            get_string('checkactivation', $p)
-        ))
-    ));
-    $settings->add(new admin_setting_configtext(
-        "$p/siteid",
-        get_string('siteid', $p),
-        get_string('activationcredentials', $p),
-        '',
-        PARAM_TEXT
-    ));
-    $settings->add(new admin_setting_configpasswordunmask(
-        "$p/apikey",
-        get_string('apikey', $p),
-        get_string('activationcredentials', $p),
-        ''
-    ));
 
     $settings->add(new admin_setting_heading("$p/assesshdr", get_string('assessmentheader', $p), ''));
     $settings->add(

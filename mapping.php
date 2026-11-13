@@ -37,7 +37,6 @@ $action = optional_param('action', '', PARAM_ALPHA);
 [$course, $cm] = get_course_and_cm_from_cmid($id, 'evidencechecklist');
 $record = $DB->get_record('evidencechecklist', ['id' => $cm->instance], '*', MUST_EXIST);
 require_login($course, false, $cm);
-\mod_evidencechecklist\local\entitlement::require_access();
 $context = context_module::instance($cm->id);
 if (!has_any_capability(['mod/evidencechecklist:manage', 'mod/evidencechecklist:viewallreports'], $context)) {
     require_capability('mod/evidencechecklist:manage', $context);
